@@ -1,0 +1,30 @@
+.input {
+  width: 100%;
+  padding: 5px 15px;
+  margin: 0 auto 10px auto;
+  border: none;
+  border-radius: 10px;
+  font: inherit;
+  background-color: aliceblue;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px midnightblue;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .input::placeholder {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .input::placeholder {
+    font-size: 10px;
+  }
+}
