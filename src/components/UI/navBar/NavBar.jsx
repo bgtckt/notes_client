@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../../../reducers/userReducer.js';
 
 export default function NavBar() {
+  // получаем значение isAuth из redux
   const isAuth = useSelector(state => state.user.isAuth);
   const dispatch = useDispatch();
 

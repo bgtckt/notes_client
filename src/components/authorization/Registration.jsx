@@ -4,10 +4,13 @@ import Input from '../UI/input/Input.jsx';
 import '../../styles/registration.less'
 import { registration } from '../../actions/user.js';
 
+// компонент формы для регистрации пользователя
 export default function Registration() {
+  // состояния email и пароля пользователя
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // функция-обработчик события отправки формы регистрации
   function regHandler(event, email, password) {
     event.preventDefault();
     registration(email, password);

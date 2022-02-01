@@ -22,7 +22,6 @@ export default function userReducer(state = defaultState, action) {
 }
 
 // функции action-creator
-// принимают данные, возвращают объект action
 export function setUser(user) {
   return {type: SET_USER, payload: user}
 }

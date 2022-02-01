@@ -5,12 +5,15 @@ import '../../styles/login.less'
 import { login } from '../../actions/user.js';
 import { useDispatch } from 'react-redux';
 
+// компонент формы для авторизации пользователя
 export default function Login() {
+  // состояния email и пароля пользователя
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
 
+  // функция-обработчик события отправки формы авторизации
   function loginHandler(event, email, password) {
     event.preventDefault();
     dispatch(login(email, password))

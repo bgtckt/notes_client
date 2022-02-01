@@ -5,7 +5,7 @@ import { API_URL } from "../config.js";
 // функция для отправки запроса на регистрацию на сервер
 export const registration = async (email, password) => {
   try {
-    // добавляем адрес сервера, полученный после деплоя, в URL запроса
+    // добавляем адрес сервера в URL запроса
     const response = await axios.post(`${API_URL}api/auth/registration`, {
       email,
       password
@@ -24,10 +24,7 @@ export const login = (email, password) => {
         email,
         password
       });
-      // передаем в action-creator setUser данные о пользователе из запроса
-      // setUser возвращает объект action
-      // dispatch передает action в userReducer
-      // useReducer вызывает соответствующий case и обновляет состояние пользователя 
+      // передаем в setUser данные о пользователе из запроса и обновляем состояние пользователя 
       dispatch(setUser(response.data.user));
       // сохраняем токен, полученный от сервера, в локальном хранилище
       localStorage.setItem('token', response.data.token);
