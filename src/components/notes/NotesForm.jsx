@@ -29,8 +29,8 @@ export default function NotesForm({setVisible}) {
    }
 
   // обновление данных, в случае их изменения в БД
-  useEffect(() => {
-    updateData();
+  useEffect(async () => {
+    await updateData();
   }, [dataChanged]);
 
   return (

@@ -21,8 +21,8 @@ export default function NotesPage() {
   const [modal, setModal] = useState(false);
 
   // обновление данных при монтировании компонента
-  useEffect(() => {
-    updateData();
+  useEffect(async () => {
+    await updateData();
     setIsLoading(false);
   }, []);
 

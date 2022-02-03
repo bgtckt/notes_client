@@ -20,8 +20,8 @@ export default function Note({title, text, date, id}) {
   }
 
   // обновление данных, в случае их изменения в БД
-  useEffect(() => {
-    updateData();
+  useEffect(async () => {
+    await updateData();
   }, [dataChanged]);
 
   return (

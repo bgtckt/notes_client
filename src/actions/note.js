@@ -23,7 +23,6 @@ export const getNotes = async () => {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     });
-    console.log(response.data);
     return response;
   } catch (error) {
     console.log(error.response.data.message);
