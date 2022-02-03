@@ -31,7 +31,7 @@ export default function Registration() {
         type='password' 
         placeholder='Введите пароль'
       />
-      <Button type='submit'>Зарегистрироваться</Button>
+      <Button type='submit'>Подтвердить</Button>
     </form>
   );
 }

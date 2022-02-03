@@ -12,7 +12,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.navbar}>
-      <h2>Заметки</h2>
+      <h1>SimpleNotes</h1>
       {!isAuth &&
         <div className={classes.navbar__links}>
           <Link className={classes.navbar__link} to='/login'>Войти</Link>

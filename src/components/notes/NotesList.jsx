@@ -8,7 +8,7 @@ export default function NotesList({elements}) {
   // возвращаем сообщение в случае, когда массив заметок пользователя пуст
   if (!elements.length) {
     return (
-      <h2>У вас пока что нет заметок</h2>
+      <h2 className='notesList__warning'>У вас пока нет заметок</h2>
     );
   }
 

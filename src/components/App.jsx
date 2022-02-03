@@ -28,8 +28,9 @@ export default function App() {
   // помещаем массив заметок и функцию обновления данных в контекст
   return (
     <dataContext.Provider value={{
-      notes: notes,
-      updateData: updateData
+      notes,
+      setNotes,
+      updateData
     }}>
       <BrowserRouter>
         <NavBar/>

@@ -20,16 +20,18 @@ export default function Note({title, text, date, id}) {
   }
 
   // обновление данных, в случае их изменения в БД
-  useEffect(async () => {
-    await updateData();
+  useEffect(() => {
+    updateData();
   }, [dataChanged]);
 
   return (
     <div className='note'>
-      <h3>{title}</h3>
-      <p>{text}</p>
-      <p>{date}</p>
-      <Button onClick={(evt) => deleteHandler(evt, id)}>Удалить</Button>
+      <div className='note__header'>
+        <h3 className='note__title'>{title}</h3>
+      </div>
+      <p className='note__text'>{text}</p>
+      <p className='note__date'>{date.split('-').reverse().join('.')}</p>
+      <button className='note__btn' onClick={(evt) => deleteHandler(evt, id)}>X</button>
     </div>
   );
 }

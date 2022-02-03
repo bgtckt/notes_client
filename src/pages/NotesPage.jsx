@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Button from '../components/UI/button/Button.jsx'
+import '../styles/notes.less';
 import NotesList from '../components/notes/NotesList.jsx';
 import ModalWindow from '../components/UI/modalWindow/ModalWindow.jsx'
 import NotesForm from '../components/notes/NotesForm.jsx';
 import { useContext } from 'react';
 import { dataContext } from '../context';
 import Loader from '../components/UI/loader/Loader.jsx';
+import Search from '../components/search/Search.jsx';
 
 // компонент страницы с заметками
 export default function NotesPage() {
@@ -18,17 +19,20 @@ export default function NotesPage() {
 
   // состояние модального окна
   const [modal, setModal] = useState(false);
-  
+
   // обновление данных при монтировании компонента
-  useEffect(async () => {
-    await updateData();
+  useEffect(() => {
+    updateData();
     setIsLoading(false);
   }, []);
 
   return (
     <>
-      <h2>Ваши заметки</h2>
-      <Button onClick={() => setModal(true)}>Добавить заметку</Button>
+      <h2 className='notes__title'>Ваши заметки</h2>
+      
+      <Search/>
+
+      <button className='notes__btn' onClick={() => setModal(true)}>+</button>
 
       {isLoading
         ? <Loader/>

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../../styles/notesForm.less';
 import Input from '../UI/input/Input.jsx';
 import Button from '../UI/button/Button.jsx';
 import { addNote } from '../../actions/note.js';
@@ -28,21 +29,22 @@ export default function NotesForm({setVisible}) {
    }
 
   // обновление данных, в случае их изменения в БД
-  useEffect(async () => {
-    await updateData();
+  useEffect(() => {
+    updateData();
   }, [dataChanged]);
 
   return (
     <>
       <form onSubmit={submitHandler}>
-        <h3>Добавление новой заметки</h3>
+        <h3 className='notesForm__title'>Добавление новой заметки</h3>
         <Input 
           value={note.title}
           onChange={(evt) => setNote({...note, title: evt.target.value})}
           type='text'
           placeholder='Введите название заметки'
         />
-        <Input 
+        <textarea 
+          className='notesForm__textarea'
           value={note.text}
           onChange={(evt) => setNote({...note, text: evt.target.value})}
           type='text'
